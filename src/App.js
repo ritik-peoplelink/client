@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import FileUpload from "./component/FIleUpload";
+import ChatInterface from "./component/chatInterFace";
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <h1>Choose An Option</h1>
+        <button>
+          <Link to="/upload">Upload Content</Link>
+        </button>
+        <button>
+          <Link to="/chat">Chat With Server</Link>
+        </button>
+      </div>
+      <Routes>
+        <Route path="/upload" element={<FileUpload />} />
+        <Route path="/chat" element={<ChatInterface />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
-
+};
 export default App;

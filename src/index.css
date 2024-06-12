@@ -1,13 +1,129 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.file-upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 200px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.file-upload-area:hover {
+  border-color: #007bff;
+}
+
+.file-upload-area input[type="file"] {
+  display: none;
+}
+
+.file-upload-area label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.file-upload-area label i {
+  font-size: 3em;
+  color: #007bff;
+}
+
+.file-upload-area label p {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #555;
+}
+
+.file-upload-area label button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload-area label button:hover {
+  background-color: #0069d9;
+}
+
+.file-preview {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.file-preview p {
+  margin: 5px 0;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+@media (max-width: 768px) {
+  .file-upload-area {
+    width: 90%;
+  }
+
+  .file-preview {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .file-upload-area {
+    width: 100%;
+  }
+
+  .file-preview {
+    width: 100%;
+  }
+}
+
+.centerDiv {
+  width: 75%;
+  margin: 0 auto;
 }
