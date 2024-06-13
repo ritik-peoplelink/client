@@ -13,8 +13,8 @@ function ChatInterface() {
     setQuery(event.target.value);
   };
   const handleSendMessage = async () => {
-    const bodyPayload = JSON.stringify({ prompt: query });
-    const response = await fetch("http://localhost:5001/generate", {
+    const bodyPayload = JSON.stringify({ query: query });
+    const response = await fetch("http://localhost:5001/chat-query", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
